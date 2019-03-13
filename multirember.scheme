@@ -1,0 +1,34 @@
+(define multirember
+  (lambda (a lat)
+    (cond
+      ((null? lat) (quote ()))
+        (else
+          (cond
+            ((eq? (car lat) a)
+              (multirember a (cdr lat)))
+                (else (cons (car lat)
+                  (multirember a (cdr lat)))))))))
+(define atom?
+(lambda (x)
+(and (not (pair? x)) (not (null? x)))))
+(print (multirember 'a '(a b a b)))
+(print (multirember 'x '(x y z)))
+(print (multirember 'apple '(apple banana orange mango)))
+(print (multirember 'cup '((coffee) cup ((tea) cup) (and (hick)) cup)))
+
+
+(define rember*
+  (lambda (a l)
+    (cond
+      ((null? l) (quote ()))
+        ((atom? (car l))
+          (cond
+            ((eq? (car l) a)
+              (rember* a (cdr l)))
+                (else (cons (car l)
+                  (rember* a (cdr l))))))
+                  (else (cons (rember* a (car l))
+                      (rember* a (cdr l)))))))
+
+(print (rember* 'a '(a b a b)))
+(print (rember* 'cup '((coffee) cup ((tea) cup) (and (hick)) cup)))
