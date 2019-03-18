@@ -42,3 +42,10 @@
 
 (print (sub1 6))
 (print (sub1 3))
+
+(define add1
+  (lambda (x)
+    (+ x 1)))
+(print (add1 5))
+(print (add1 3))
+(print (add1 4))
