@@ -19,17 +19,28 @@
   ;(apple banana apple orange)
   ;(print (insertLR 'mango 'banana '(banana orange)))
   ;(mango banana mango orange)
-  ;(print (insertLR 'a 'c '(b c)))
+  ;(print (insertRL 'a 'c '(b c)))
   ;(b a c a)
 
-(define insertLR
-  (lambda (new old l)
-    (cons new (cons new l))))
+(define insertRL
+  (lambda (new old lat)
+        (cons new  (cons new (cdr lat)))))
 
+(print '(insertRL mango banana (banana orange)))
+(print (insertRL 'mango 'banana '(banana orange)))
+(print '(insertRL apple banana (banana orange)))
+(print (insertRL 'apple 'banana '(banana orange)))
+(print (insertRL 'a 'c '(b c)))
 
+(define insertR
+  (lambda (new old lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else (cond
+            ((eq? (car lat) old)
+              (cons old
+                (cons new (cdr lat))))
+            (else (cons (car lat)
+                    (insertR new old (cdr lat)))))))))
 
-(print '(insertLR mango banana (banana orange)))
-(print (insertLR 'mango 'banana '(banana orange)))
-(print '(insertLR apple banana (banana orange)))
-(print (insertLR 'apple 'banana '(banana orange)))
-(print (insertLR 'a 'c '(b c)))
+(print (insertR 'topping 'fudge '(ice cream with fudge for dessert)))
