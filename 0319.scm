@@ -26,11 +26,11 @@
   (lambda (new old lat)
         (cons new  (cons new (cdr lat)))))
 
-(print '(insertRL mango banana (banana orange)))
-(print (insertRL 'mango 'banana '(banana orange)))
-(print '(insertRL apple banana (banana orange)))
-(print (insertRL 'apple 'banana '(banana orange)))
-(print (insertRL 'a 'c '(b c)))
+;(print '(insertRL mango banana (banana orange)))
+;(print (insertRL 'mango 'banana '(banana orange)))
+;(print '(insertRL apple banana (banana orange)))
+;(print (insertRL 'apple 'banana '(banana orange)))
+;(print (insertRL 'a 'c '(b c)))
 
 (define insertR
   (lambda (new old lat)
