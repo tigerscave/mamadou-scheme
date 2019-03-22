@@ -44,3 +44,4 @@
                     (insertR new old (cdr lat)))))))))
 
 (print (insertR 'topping 'fudge '(ice cream with fudge for dessert)))
+;(ice cream with fudge topping for dessert)
