@@ -42,3 +42,11 @@
 (print (member 'apple '(apple banana orange)))
 (print (member 'meat '(meat gravy )))
 (print (member ' meat '(banana orange)))
+
+(define make-lat
+  (lambda (a b c)
+  (cons a (cons b (cons c ())))))
+
+(print (make-lat 'apple 'orange 'banana))
+(print (make-lat 'hoge 'fuga 'pigo))
+(print (make-lat 1 2 3))
