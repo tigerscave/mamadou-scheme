@@ -11,3 +11,4 @@
 
 ;(ice cream with topping fudge for dessert)
 (print (insertL 'topping 'fudge '(ice cream with fudge for dessert)))
+(print (insertL 'a 'b '(a c d f)))
