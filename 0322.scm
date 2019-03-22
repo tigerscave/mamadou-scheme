@@ -10,8 +10,8 @@
                   (insertL new old (cdr lat)))))))))
 
 ;(ice cream with topping fudge for dessert)
-(print (insertL 'topping 'fudge '(ice cream with fudge for dessert)))
-(print (insertL 'a 'b '(a c d f)))
+;(print (insertL 'topping 'fudge '(ice cream with fudge for dessert)))
+;(print (insertL 'a 'b '(a c d f)))
 
 (define atom?
   (lambda (x)
@@ -31,3 +31,14 @@
 (print (lat? '((apple banana orange))))
 (print (lat? '(())))
 (print (lat? '()))
+
+(define member
+  (lambda (a lat)
+    (cond
+    ((null? lat) #f)
+      (else (or (eq? (car lat) a)
+        (member a(cdr lat)))))))
+
+(print (member 'apple '(apple banana orange)))
+(print (member 'meat '(meat gravy )))
+(print (member ' meat '(banana orange)))
