@@ -1,0 +1,13 @@
+(define rember
+  (lambda (a lat)
+    (cond
+    ((null? lat) (quote ()))
+      (else (cond
+        ((eq? (car lat) a) (cdr lat))
+          (else (rember a (cdr lat))))))))
+(define atom?
+  (lambda (x)
+    (and (not (pair? x)) (not (null? x)))))
+(print (rember 'a '(a b c d a)))
+(print (rember 'apple '(apple banana orange)))
+(print (rember 'x '(x y z)))
