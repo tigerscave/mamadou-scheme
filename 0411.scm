@@ -37,7 +37,7 @@
   (lambda (tup)
     (cond
       ((null? tup) 0)
-      (else (+ (car tup) (sum-tup* ( cdr tup)))))))
+      (else (+ (car tup) (sum-tup*( cdr tup)))))))
 
 (print (sum-tup* '(1 2 3 4)))
 (print (sum-tup* '(12 32 48 6)))
