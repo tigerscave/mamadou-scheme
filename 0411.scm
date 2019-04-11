@@ -33,11 +33,20 @@
 (print (rm-even* '(1 2 3 4)))
 (print (rm-even* '(2 4 6 8)))
 
-(define sum-tub-star
+(define sum-tup-star
   (lambda (tup)
     (cond
       ((null? tup) 0)
-      (else (+ (car tup) (sum-tub-star ( cdr tup)))))))
+      (else (+ (car tup) (sum-tup-star ( cdr tup)))))))
 
-(print (sum-tub-star '(1 2 3 4)))
-(print (sum-tub-star '(12 32 48 6)))
+(print (sum-tup-star '(1 2 3 4)))
+(print (sum-tup-star '(12 32 48 6)))
+
+(define tup-sum
+  (lambda (tup)
+    (cond
+    ((null? tup) 0)
+    (else (+ (car tup) (tup-sum (cdr tup)))))))
+(print (tup-sum '(1 2 3 4)))
+
+(print (tup-sum '(2 4 6 8)))
