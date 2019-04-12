@@ -14,7 +14,6 @@
   (print (lat? '()))
   (print (lat? '(apple banana orange)))
   (print (lat? '(a b c)))
-
   ;(print (insertLR 'apple 'banana '(banana orange)))
   ;(apple banana apple orange)
   ;(print (insertLR 'mango 'banana '(banana orange)))
@@ -22,7 +21,7 @@
   ;(print (insertRL 'a 'c '(b c)))
   ;(b a c a)
 
-(define insertRL
+(define insertLR
   (lambda (new old lat)
         (cons new  (cons new (cdr lat)))))
 
