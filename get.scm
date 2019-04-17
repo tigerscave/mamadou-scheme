@@ -21,5 +21,21 @@
   (lambda (n m)
     (cond
       ((zero? m) 1)
-      (else (* n (power n (- m 1)))))))
+      (else (* n (power n (- m 1))))
+    )
+  )
+)
+
 (print (power 5 3))
+
+(define tup-sum
+  (lambda (tup)
+    (cond
+      ((null? tup) 0)
+      ((number? tup) tup)
+      (else (+ (car tup) (tup-sum (cdr tup))))
+    )
+  )
+)
+
+(print (sum-tup-in-tup '(2 3 4 5 6)))
